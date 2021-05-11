@@ -47,4 +47,28 @@
 			setcookie($cnm,$rs,time()+3600,'/');
 		}
 	}
+	function getPersonOfDiv($pr){
+		static $w=0;$w++;
+		return'<div id="dv'.$w.'" class="dv">
+				<img class="img" src="img/'.$pr->getIcons().'">
+				<h2 class="hnm">'.$pr->getName().'</h2>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Дата народження: '.$pr->getDateOfBirth().'</div>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Ваш вік: '.$pr->getYear().'</div>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Стать: '.(($pr->getSex())?'Чоловіча':'Жіноча').'</div>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Любиме заняття: '.$pr->getHobby().'</div>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Любима музика: '.$pr->getMusic().'</div>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Любиме відео: '.$pr->getVideo().'</div>
+				<div class="tx" style="position:relative;left:7px;margin-top:3px;">Дружі: '.implode(", ",$pr->getFriends()).'</div>
+				<button id="bt'.$w.'" class="io btm btr1" style="position:relative;text-align:center;margin-top:10px;margin-bottom:10px;">Дізнатися більше</button>
+			</div>';
+	}
+	function split($str,$ch){
+		$rs=array("");$ln=strlen($str);
+		$j=0;$st="";
+		for($i=0;$i<$ln;$i++){
+			if($str[$i]==$ch){$j++;$rs[$j]="";}
+			else $rs[$j].=$str[$i];
+		}
+		return $rs;
+	}
 ?>
