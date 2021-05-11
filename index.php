@@ -11,7 +11,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/code.js"></script>
 	</head>
-	<body style="position:relative;background-attachment:fixed;margin:0px 0px 0px 0px;" class="bdc">
+	<body style="position:relative;background-image:url(img/qwe.png);background-attachment:fixed;margin:0px 0px 0px 0px;" class="bdc">
 		<?php
 			include_once'html/header.html';
 			$zs=array('Денис','Артем','Юля');
